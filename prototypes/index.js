@@ -130,7 +130,11 @@ const modPrompts = {
     //   { mod: 4, studentsPerInstructor: 8 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = mods.reduce((acc, elem) => {
+      let inning = {mod: elem.mod, studentsPerInstructor: elem.students / elem.instructors};
+      acc.push(inning);
+      return acc;
+    }, []);
     return result;
 
     // Annotation:
