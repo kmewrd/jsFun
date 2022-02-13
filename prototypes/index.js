@@ -59,8 +59,8 @@ const kittyPrompts = {
     //   color: 'orange'
     // },
     // ...etc]
-
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    kitties.forEach(cat => cat.age += 2);
+    const result = kitties;
     return result;
   }
 };
