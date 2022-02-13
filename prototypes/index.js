@@ -39,7 +39,7 @@ const kittyPrompts = {
   sortByAge() {
     // Sort the kitties by their age
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = kitties.sort((cat1, cat2) => cat1.age - cat2.age).reverse();
     return result;
 
     // Annotation:
