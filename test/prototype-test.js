@@ -71,13 +71,13 @@ describe("PROTOTYPES", () => {
       }])
     })
     describe('kittyPrompts refactor', () => {
-      it.skip('should be able to handle orange puppers', () => {
+      it('should be able to handle orange puppers', () => {
         const e = kittyPrompts.orangePetNames(puppers);
 
         expect(e).to.deep.equal(["Hatchet", "Butter"])
       })
 
-      it.skip('should sort pups too', () => {
+      it('should sort pups too', () => {
         const e = kittyPrompts.sortByAge(puppers);
 
         expect(e).to.deep.equal([{
