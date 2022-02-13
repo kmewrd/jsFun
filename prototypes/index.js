@@ -28,7 +28,8 @@ const kittyPrompts = {
 
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const orangeCats = kitties.filter(cat => cat.color === 'orange');
+    const result = orangeCats.map(cat => cat.name);
     return result;
 
     // Annotation:
@@ -66,7 +67,7 @@ const kittyPrompts = {
 
 // PLEASE READ-----------------------
 // Currently, your functions are probably using the `kitties` global import variable.
-// refactor the above functions using arguments and parameters so that 
+// refactor the above functions using arguments and parameters so that
 // they can perform the same utility
 // for the kitties or puppers datasets, depending on what arguments you send through.
 
