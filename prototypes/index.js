@@ -200,9 +200,13 @@ const cakePrompts = {
     // },
     // ..etc
     // ]
-
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
+    const filteredCakes = [];
+    const filtering = cakes.forEach(cake => {
+      if (cake.inStock) {
+        filteredCakes.push(cake);
+      }
+    });
+    return filteredCakes;
 
     // Annotation:
     // Write your annotation here as a comment
