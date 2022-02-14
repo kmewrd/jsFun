@@ -169,7 +169,11 @@ const cakePrompts = {
     //    ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.reduce((acc, cake) => {
+      let dessert = {flavor: cake.cakeFlavor, inStock: cake.inStock};
+      acc.push(dessert);
+      return acc;
+    }, []);
     return result;
 
     // Annotation:

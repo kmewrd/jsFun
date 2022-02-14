@@ -174,7 +174,7 @@ describe("PROTOTYPES", () => {
   });
 
   describe("Cake Prompts", () => {
-    it.skip("stockPerCake", () => {
+    it("stockPerCake", () => {
       const e = cakePrompts.stockPerCake();
 
       expect(e).to.deep.equal([{
