@@ -381,13 +381,22 @@ const bookPrompts = {
   },
   getNewBooks() {
     // return an array of objects containing all books that were
-    // published in the 90's and 00's. Inlucde the title and the year Eg:
+    // published in the 90's and 00's. Include the title and the year Eg:
 
     // [{ title: 'Harry Potter and the Sorcerer\'s Stone', year: 1997 },
     //  { title: 'Life of Pi', year: 2001 },
     //  { title: 'The Curious Incident of the Dog in the Night-Time', year: 2003 }]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = books.reduce((acc, book) => {
+      if (book.published >= 1990) {
+        let newBook = {
+          title: book.title,
+          year: book.published
+        };
+        acc.push(newBook);
+      }
+      return acc;
+    }, []);
     return result;
 
     // Annotation:
