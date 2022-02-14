@@ -475,8 +475,17 @@ const nationalParksPrompts = {
     //   parksToVisit: ["Yellowstone", "Glacier", "Everglades"],
     //   parksVisited: ["Rocky Mountain", "Acadia", "Zion"]
     //}
-
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const parksToVisit = nationalParks.filter(park => {
+      if (!park.visited) {
+        return park.name;
+      }
+    }).map(park => park.name);
+    const parksVisited = nationalParks.filter(park => {
+      if (park.visited) {
+        return park.name;
+      }
+    }).map(park => park.name);
+    const result = {parksToVisit: parksToVisit, parksVisited: parksVisited}
     return result;
 
     // Annotation:
