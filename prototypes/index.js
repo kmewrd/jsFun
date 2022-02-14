@@ -201,12 +201,12 @@ const cakePrompts = {
     // ..etc
     // ]
     const filteredCakes = [];
-    const filtering = cakes.forEach(cake => {
+    const result = cakes.filter(cake => {
       if (cake.inStock) {
-        filteredCakes.push(cake);
+        return cake;
       }
     });
-    return filteredCakes;
+    return result;
 
     // Annotation:
     // Write your annotation here as a comment
