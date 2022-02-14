@@ -318,7 +318,18 @@ const classPrompts = {
     //   beCapacity: 96
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = classrooms.reduce((acc, room) => {
+      if (!acc.feCapacity && room.program === "FE") {
+        acc.feCapacity = room.capacity;
+      } else if (acc.feCapacity && room.program === "FE") {
+        acc.feCapacity += room.capacity;
+      } else if (!acc.beCapacity && room.program === "BE") {
+        acc.beCapacity = room.capacity;
+      } else {
+        acc.beCapacity += room.capacity;
+      }
+      return acc;
+    }, {});
     return result;
 
     // Annotation:
