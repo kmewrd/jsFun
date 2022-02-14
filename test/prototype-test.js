@@ -288,7 +288,7 @@ describe("PROTOTYPES", () => {
       })
     });
 
-    it.skip("sortByCapacity", () => {
+    it("sortByCapacity", () => {
       const e = classPrompts.sortByCapacity();
 
       expect(e).to.deep.equal([{
