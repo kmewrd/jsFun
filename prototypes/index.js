@@ -368,7 +368,11 @@ const bookPrompts = {
     //   'Catch-22', 'Treasure Island']
 
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = books.filter(book => {
+      if (book.genre !== "Horror" && book.genre !== "True Crime") {
+        return book;
+      }
+    }).map(book => book.title);
     return result;
 
     // Annotation:
