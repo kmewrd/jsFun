@@ -230,9 +230,15 @@ const cakePrompts = {
     // Return an array of all unique toppings (no duplicates) needed to bake
     // every cake in the dataset e.g.
     // ['dutch process cocoa', 'toasted sugar', 'smoked sea salt', 'berries', ..etc]
-
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
+    const toppings = [];
+    const result = cakes.forEach(cake => {
+      cake.toppings.forEach(topping => {
+        if (!toppings.includes(topping)) {
+          toppings.push(topping);
+        }
+      });
+    });
+    return toppings;
 
     // Annotation:
     // Write your annotation here as a comment
