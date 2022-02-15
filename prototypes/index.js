@@ -583,14 +583,12 @@ const breweryPrompts = {
     // ...etc.
     // ]
 
-    const result = breweries.reduce((acc, brewery) => {
-      let brewObject = {
+    const result = breweries.map(brewery => {
+      return {
         name: brewery.name,
         beerCount: brewery.beers.length
-      };
-      acc.push(brewObject);
-      return acc;
-    }, []);
+      }
+    })
     return result;
 
     // Annotation:
