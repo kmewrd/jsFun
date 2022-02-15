@@ -769,8 +769,19 @@ const astronomyPrompts = {
     //     lightYearsFromEarth: 640,
     //     color: 'red' }
     // ]
-
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const allConstellations = Object.values(constellations);
+    const allStars = [];
+    const getStars = allConstellations.forEach(constellation => {
+      constellation.stars.forEach(star => {
+        allStars.push(star);
+      })
+    })
+    const result = stars.reduce((acc, star) => {
+      if (allStars.includes(star.name)) {
+        acc.push(star);
+      }
+      return acc;
+    }, []);
     return result;
 
     // Annotation:
@@ -787,8 +798,23 @@ const astronomyPrompts = {
     //   orange: [{obj}],
     //   red: [{obj}]
     // }
+    const colors = [];
+    const getColors = stars.forEach(star => {
+      if (!colors.includes(star.color)) {
+        colors.push(star.color);
+      }
+    })
+    const result = stars.reduce((acc, star) => {
+      let starObj = colors.forEach(color => {
+        acc[color] = [];
+      });
+      return acc;
+    }, {});
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    let allStars = stars.forEach(star => {
+       result[star.color].push(star);
+    })
+
     return result;
 
     // Annotation:
