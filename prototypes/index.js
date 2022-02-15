@@ -583,7 +583,14 @@ const breweryPrompts = {
     // ...etc.
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = breweries.reduce((acc, brewery) => {
+      let brewObject = {
+        name: brewery.name,
+        beerCount: brewery.beers.length
+      };
+      acc.push(brewObject);
+      return acc;
+    }, []);
     return result;
 
     // Annotation:
