@@ -701,7 +701,15 @@ const turingPrompts = {
     //     Will: [1, 2, 3, 4]
     //   }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = instructors.reduce((acc, instructor) => {
+      acc[instructor.name] = [];
+      let concepts = instructor.teaches;
+      let mods = cohorts.filter(cohort => {
+        return cohort.curriculum.some(curr => concepts.includes(curr));
+      })
+      mods.forEach(mod => acc[instructor.name].push(mod.module));
+      return acc;
+    }, {});
     return result;
 
     // Annotation:
