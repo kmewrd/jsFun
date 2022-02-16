@@ -725,8 +725,20 @@ const turingPrompts = {
     //   javascript: [ 'Travis', 'Louisa', 'Christie', 'Will' ],
     //   recursion: [ 'Pam', 'Leta' ]
     // }
-
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const topics = [];
+    cohorts.forEach(cohort => {
+      cohort.curriculum.forEach(topic => {
+        if (!topics.includes(topic)) {
+          topics.push(topic);
+        }
+      })
+    });
+    const result = topics.reduce((acc, topic) => {
+      acc[topic] = [];
+      let teachers = instructors.filter(instructor => instructor.teaches.includes(topic));
+      teachers.forEach(teacher => acc[topic].push(teacher.name));
+      return acc;
+    }, {});
     return result;
 
     // Annotation:
