@@ -434,8 +434,7 @@ const weatherPrompts = {
     // [ 'Atlanta, Georgia is sunny.',
     // 'New Orleans, Louisiana is sunny.',
     // 'Raleigh, North Carolina is mostly sunny.' ]
-    const sunnyPlaces = weather.filter(place => place.type === 'sunny' || place.type === 'mostly sunny');
-    const result = sunnyPlaces.map(place => `${place.location} is ${place.type}.`)
+    const result = weather.filter(place => place.type === 'sunny' || place.type === 'mostly sunny').map(place => `${place.location} is ${place.type}.`)
     return result;
 
     // Annotation:
