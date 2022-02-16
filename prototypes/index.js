@@ -821,7 +821,6 @@ const astronomyPrompts = {
       });
       return acc;
     }, {});
-
     let allStars = stars.forEach(star => {
        result[star.color].push(star);
     })
@@ -847,7 +846,7 @@ const astronomyPrompts = {
     //    "The Little Dipper" ]
 
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = stars.sort((a, b) => a.visualMagnitude - b.visualMagnitude).filter(con => con.constellation).map(con => con.constellation);;
     return result;
 
     // Annotation:
