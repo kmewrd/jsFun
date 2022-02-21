@@ -94,7 +94,17 @@ const clubPrompts = {
     //   ...etc
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = clubs.reduce((acc, club) => {
+      club.members.forEach(member => {
+        if (!acc[member]) {
+          acc[member] = [];
+          acc[member].push(club.club);
+        } else {
+          acc[member].push(club.club);
+        }
+      });
+      return acc;
+    }, {});
     return result;
 
     // Annotation:
@@ -880,7 +890,7 @@ const astronomyPrompts = {
     //    "The Little Dipper" ]
 
 
-    const result = stars.sort((a, b) => a.visualMagnitude - b.visualMagnitude).filter(con => con.constellation).map(con => con.constellation);;
+    const result = stars.sort((a, b) => a.visualMagnitude - b.visualMagnitude).filter(con => con.constellation).map(con => con.constellation);
     return result;
 
     // Annotation:
